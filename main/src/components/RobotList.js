@@ -11,6 +11,8 @@ class RobotList extends Component {
 		this.state = {
 			robots : []
 		}
+		//ce trebuie sa mai adaug eu
+		this.addRobot=robot=>{this.store.addRobot(robot);}
 	}
 	componentDidMount(){
 		this.store = new RobotStore()
@@ -32,6 +34,8 @@ class RobotList extends Component {
 						<Robot item={e} key={i} />
 					)
 				}
+
+				<RobotForm onAdd={this.addRobot}/>
 			</div>
 		)
 	}
